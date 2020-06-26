@@ -1,0 +1,208 @@
+
+<!-- header start -->
+  <mat-toolbar color="warn" style="background-color: #182A36;">
+  <mat-toolbar-row style="height: 80px;">
+
+  <div class=" col-1 col-lg-1">
+  <!--  <button type="button" aria-label="Toggle sidenav" mat-icon-button 
+    (click)="drawer.toggle()" color="primary" id="outline-none">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button> -->
+
+    <button id="outline-none" mat-icon-button color='primary' (click) ='sidenav.toggle()'class ='toogleSidenav'[ngClass]="showToggle">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+  </div>
+
+  <div class="col-md-2 col-2 col-lg-1">
+        <img src="./assets/images/nrg_logo.png" id="nrg-logo-paddding" [routerLink]="['/landingpage']"/>
+  </div>
+  <div class="col-md-2 col-3 col-lg-5">
+   
+    <alert></alert>
+   
+</div>
+
+
+  <div class="col-lg-2"></div>
+
+  <div class="col-2 col-lg-2">
+      <div class="dropdown">
+          <div class="dropbtn icons btn-right showLeft" (click)="showDropdown()">
+              <div> 
+                User Name:  {{username}} <br/>
+                User Type:  {{role}} 
+
+               </div>
+          </div>
+         
+     </div>
+</div>
+
+
+
+
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- header end -->
+<br/><br/>
+
+<mat-sidenav-container class="example-container">
+  <!-- <mat-sidenav #drawer mode="side" opened role="navigation"> -->
+    <mat-sidenav class="sidenav" #sidenav [mode]="mode" [opened]="openSidenav" style="height: 98%;">
+    <mat-nav-list style="width: 250px;margin-top: 25px;">
+      <ng-container *ngFor="let item of menuItems let i=index">
+          <mat-list-item  class="white-hover">  
+         <a mat-list-item      style="font-family:'Lato',Georgia,Arial,sans-serif;font-size: medium;"
+          routerLink= {{item.pageName}} > {{item.name}}</a>
+             <mat-icon mat-list-icon>
+              
+               <img width="20" height="20" src={{menuItemsIcons[i].name}} />
+
+             </mat-icon> 
+
+
+            </mat-list-item>
+      </ng-container>
+
+    </mat-nav-list>
+  
+    
+  </mat-sidenav>
+  <mat-sidenav-content class="content" style="background:#111111">
+
+<br/>
+<!-- <div *ngIf="notSelected"> -->
+    <div *ngIf="route.firstChild.children.length === 0">
+     
+      <h3 style="padding-left: 20px;padding-bottom: 20px;">Issue List by Status</h3>
+
+          <div class="row">
+                     
+                               
+        <div class="col-lg-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-premium-dark">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Open</div>
+                        <div class="widget-subheading">Issues Opens</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-warning"><span>{{key1}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-xl-4">
+          <div class="card mb-3 widget-content bg-premium-dark">
+              <div class="widget-content-wrapper text-white">
+                  <div class="widget-content-left">
+                      <div class="widget-heading">Ready For Development</div>
+                      <div class="widget-subheading">Ready For Development</div>
+                  </div>
+                  <div class="widget-content-right">
+                      <div class="widget-numbers text-warning"><span>{{key2}}</span></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-lg-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-premium-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">In Progress</div>
+                    <div class="widget-subheading">Issues In Progress</div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-warning"><span>{{key3}}</span></div>
+                </div>
+            </div>
+        </div>
+      </div>
+           
+      
+      <div class="col-lg-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-premium-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">Development Completed</div>
+                    <div class="widget-subheading">Dev Completed</div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-warning"><span>{{key4}}</span></div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+                            </div>
+
+
+<h3 style="padding-left: 20px; padding-bottom: 20px;">Issue List by Priority</h3>
+   
+      <div class="row">
+        
+          
+      <div class="col-lg-6 col-xl-4" (click)="loadData()">
+          <div class="card mb-3 widget-content bg-premium-dark">
+              <div class="widget-content-wrapper text-white">
+                  <div class="widget-content-left">
+                      <div class="widget-heading">Critical</div>
+                      <div class="widget-subheading">Issues on Critical</div>
+                  </div>
+                  <div class="widget-content-right">
+                      <div class="widget-numbers text-warning"><span>{{key5}}</span></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-lg-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-premium-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">Highest</div>
+                    <div class="widget-subheading">Issues on Highest</div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-warning"><span>{{key6}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6 col-xl-4">
+      <div class="card mb-3 widget-content bg-premium-dark">
+          <div class="widget-content-wrapper text-white">
+              <div class="widget-content-left">
+                  <div class="widget-heading">High</div>
+                  <div class="widget-subheading">Issues In High</div>
+              </div>
+              <div class="widget-content-right">
+                  <div class="widget-numbers text-warning"><span>{{key7}}</span></div>
+              </div>
+          </div>
+      </div>
+    </div>
+                            
+          </div>
+                    
+      
+    </div>
+    
+    <br/>
+
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

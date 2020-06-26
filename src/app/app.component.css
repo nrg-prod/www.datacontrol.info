@@ -1,0 +1,34 @@
+html, body {
+    font-family: 'Muli';
+  }
+  label {
+    color: #97A4AC;
+  }
+::ng-deep .mat-dialog-container{
+    background-color: #243c48
+    !important;
+  }
+
+  
+/* width */
+::ng-deep ::-webkit-scrollbar {
+    width: 15px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::ng-deep ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 0px;
+  }
+  
+  /* Handle */
+  ::ng-deep ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 0px;
+  }
+  
+  /* Handle on hover */
+  ::ng-deep ::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+  }

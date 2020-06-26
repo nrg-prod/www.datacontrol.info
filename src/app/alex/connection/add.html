@@ -1,0 +1,62 @@
+
+
+  <h1>Add New contact</h1>
+  <p>Please fill in this form to create an contact.</p>
+  <hr>
+  <form name="form"  class="modal-content" (ngSubmit)=" saveConnection()">
+
+  <div class="container">
+
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" [(ngModel)]="model.name" #name="ngModel" 
+      placeholder="Enter Name" name="name" required>
+    
+       
+      <label for="emailId1"><b>Email 1</b></label>
+      <input type="text" [(ngModel)]="model.emailId1" #url="ngModel" 
+      placeholder="Enter Email 1" name="emailId1" required>
+    
+      <label for="emailId2"><b>Email 2</b></label>
+      <input type="text" [(ngModel)]="model.emailId2" #url="ngModel" 
+      placeholder="Enter Email 2" name="emailId2" required>
+    
+      <label for="phoneNumber1"><b>Phone Number </b></label>
+      <input type="text" [(ngModel)]="model.phoneNumber1" #phoneNumber1="ngModel" 
+      placeholder="Enter Phone Number 1" name="phoneNumber1" required>
+    
+      <label for="phoneNumber2"><b>What App Number</b></label>
+      <input type="text" [(ngModel)]="model.phoneNumber2" #phoneNumber2="ngModel" 
+      placeholder="Enter Phone Number 2" name="phoneNumber2" required>
+    
+      <label for="skypeId"><b>Skype ID</b></label>
+      <input type="text" [(ngModel)]="model.skypeId" #skypeId="ngModel" 
+      placeholder="Enter Skype ID" name="skypeId" required>
+      
+      <label for="skypePassword"><b>Skype Password</b></label>
+      <input type="text" [(ngModel)]="model.skypePassword" #skypePassword="ngModel" 
+      placeholder="Ignore.." name="skypePassword" required>
+     
+
+       
+      <label for="currentAddress"><b>Current Address</b></label>
+      <textarea id="currentAddress" [(ngModel)]="model.currentAddress" 
+      #currentAddress="ngModel" name="currentAddress" placeholder="Current address.." ></textarea>
+
+      <label for="permanentAddress"><b>Permanent Address</b></label>
+      <textarea id="permanentAddress" [(ngModel)]="model.permanentAddress" 
+      #permanentAddress="ngModel" name="permanentAddress" placeholder="Current address.." ></textarea>
+
+         <label for="email"><b>COUNTRY</b></label>
+
+      <select placeholder="Enter Country" [(ngModel)]="model.country" #country="ngModel" 
+      id="country" name="country">
+      <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+
+     
+      <button type="submit"  id="btnsave" value="Save"> Save </button>
+
+
+</div>
+</form>

@@ -1,0 +1,52 @@
+
+
+  <h1>Add New Server </h1>
+  <p>Please fill in this form to create an Server.</p>
+  <hr>
+  <form name="form"  class="modal-content" (ngSubmit)=" saveServerinfo()">
+    <div class="container">
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" [(ngModel)]="model.name" #name="ngModel" 
+      placeholder="Enter Name" name="name" required>
+    
+
+      <label for="country"><b>COUNTRY</b></label>
+
+      <select [(ngModel)]="model.country" #country="ngModel" 
+      id="country" name="country">
+        <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+
+    
+      <label for="userName"><b>User Name</b></label>
+      <input type="text" [(ngModel)]="model.userName" #userName="ngModel" 
+      placeholder="Enter User Name" name="userName" required>
+    
+      <label for="password"><b>Password </b></label>
+      <input type="text" [(ngModel)]="model.password" #password="ngModel" 
+      placeholder="Enter Password" name="password" required>
+    
+ 
+
+      <label for="privateHostname"><b>Private IP / Host Name</b></label>
+      <input type="text" [(ngModel)]="model.privateHostname" #privateHostname="ngModel"
+       placeholder="Enter Private Host Name" name="privateHostname" required>
+    
+       <label for="publicHostname"><b>Public IP / Host Name</b></label>
+      <input type="text" [(ngModel)]="model.publicHostname" #publicHostname="ngModel"
+       placeholder="Enter Public Host Name" name="publicHostname" required>
+    
+         
+      <label for="notes"><b>Notes</b></label>
+
+      <textarea id="notes" [(ngModel)]="model.notes" #notes="ngModel" 
+      name="notes" placeholder="Write something.." ></textarea>
+
+   
+   
+      <button type="submit"  id="btnsave" value="Save"> Save </button>           
+
+  </div>
+  </form>
+

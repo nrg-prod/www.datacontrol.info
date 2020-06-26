@@ -1,0 +1,68 @@
+
+
+    <h1> Modify / Remove </h1>
+    <hr>
+
+    <form name="form"  class="modal-content">
+      <div class="container">
+  
+        <label for="portalName"><b>PORTAL_NAME</b></label>
+        <input type="text" [(ngModel)]="model.portalName" #portalName="ngModel" name="portalName" required>
+      
+  
+        <label for="email"><b>COUNTRY</b></label>
+  
+        <select placeholder="Enter Country" [(ngModel)]="model.country" #country="ngModel" id="country" name="country">
+
+          <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+  
+        </select>
+   
+      
+   
+        <label for="url"><b>URL</b></label>
+        <textarea [(ngModel)]="model.url" #url="ngModel"  name="url" required> </textarea>
+        
+        <label for="userName"><b>USER_NAME</b></label>
+        <input type="text" [(ngModel)]="model.userName" #userName="ngModel"  name="userName" required>
+       
+        <label for="password"><b>PASSWORD</b></label>
+        <input type="text" [(ngModel)]="model.password" #password="ngModel"  name="password" required>
+      
+
+        <label for="emailId1"><b>Email 1</b></label>
+        <input type="text" [(ngModel)]="model.emailId1" #emailId1="ngModel" name="emailId1" required>
+       
+
+        <label for="emailId2"><b>Email 2</b></label>
+        <input type="text" [(ngModel)]="model.emailId2" #emailId2="ngModel" name="emailId2" required>
+       
+        <label for="phoneNumber1"><b>Phone Number 1</b></label>
+        <input type="text" [(ngModel)]="model.phoneNumber1" #phoneNumber1="ngModel" name="phoneNumber1" required>
+       
+
+        <label for="phoneNumber2"><b>Phone Number 2</b></label>
+        <input type="text" [(ngModel)]="model.phoneNumber2" #phoneNumber2="ngModel" name="phoneNumber2" required>
+       
+        <label for="createdDate"><b>Created Date</b></label>
+        <input type="text" [(ngModel)]="model.createdDate" #createdDate="ngModel" name="createdDate" required>
+       
+
+
+        <label for="updatedDate"><b>Updated Date</b></label>
+        <input type="text" [(ngModel)]="model.updatedDate" #updatedDate="ngModel" name="updatedDate" required>
+       
+
+        
+        <label for="notes"><b>Notes</b></label>
+  
+        <textarea  [(ngModel)]="model.notes" #notes="ngModel" name="notes"></textarea>
+  
+     
+     
+        <button type="submit" id="btnupdate" (click)="editRemove('PUT')" value="Save"> Update </button>
+        <button type="submit" id="btndel" (click)="editRemove('DELETE')"> Delete </button>
+        <button id="btnclose" class="mat-raised-button"(click)="close()">Close</button>
+
+    </div>
+    </form>

@@ -1,0 +1,76 @@
+
+
+  <h1>Add New Bank</h1>
+  <p>Please fill in this form to create an Bank.</p>
+  <hr>
+  <form name="form"  class="modal-content" (ngSubmit)=" saveBank()">
+    <div class="container">
+      
+
+      <label for="bankName"><b>Bank Name</b></label>
+      <input type="text" [(ngModel)]="model.bankName" #bankName="ngModel" 
+      placeholder="Enter Bank Name" name="bankName" required>
+
+      <label for="accountHolderName"><b>Account Holder Name</b></label>
+      <input type="text" [(ngModel)]="model.accountHolderName" #accountHolderName="ngModel" 
+      placeholder="Enter Account Holder Name" name="accountHolderName" required>
+    
+      <label for="accountNumber"><b>Account Number</b></label>
+      <input type="text" [(ngModel)]="model.accountNumber" #accountNumber="ngModel" 
+      placeholder="Enter Account Number" name="accountNumber" required>
+    
+      <label for="atmPinNumber"><b>ATM Pin</b></label>
+      <input type="text" [(ngModel)]="model.atmPinNumber" #atmPinNumber="ngModel" 
+      placeholder="Enter ATM Pin" name="atmPinNumber" required>
+    
+      <label for="bankAddress"><b>Bank Address</b></label>
+     
+      <textarea id="bankAddress" [(ngModel)]="model.bankAddress" 
+      #bankAddress="ngModel" name="bankAddress" placeholder="Enter Bank address.." ></textarea>
+
+
+      <label for="bankCountry"><b>Country</b></label>
+      <select placeholder="Enter Country" [(ngModel)]="model.bankCountry" 
+      #country="ngModel" id="country" name="country">
+        <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+
+    
+      <label for="bankEmailid"><b>Email </b></label>
+      <input type="text" [(ngModel)]="model.bankEmailid" #bankEmailid="ngModel" 
+      placeholder="Enter Email " name="bankEmailid" required>
+    
+    
+      <label for="bankPhone"><b>Phone Number </b></label>
+      <input type="text" [(ngModel)]="model.bankPhone" #bankPhone="ngModel"
+       placeholder="Enter Phone Number " name="bankPhone" required>
+    
+      <label for="netbankingUsername"><b>Net Banking User Name</b></label>
+      <input type="text" [(ngModel)]="model.netbankingUsername" #netbankingUsername="ngModel" 
+      placeholder="Enter Net banking username" name="netbankingUsername" required>
+    
+
+      <label for="netbankingPassword"><b>Net Banking Password </b></label>
+      <input type="text" [(ngModel)]="model.netbankingPassword" #netbankingPassword="ngModel" 
+      placeholder="Enter Net Banking Password" name="netbankingPassword" required>
+      
+      <label for="debitCardNumber"><b>Debit Card Number</b></label>
+      <input type="text" [(ngModel)]="model.debitCardNumber" #debitCardNumber="ngModel" 
+      placeholder="Enter Debit Card Number" name="debitCardNumber" required>
+    
+      <!--
+      <label for="debitCardAtmPin"><b>Debit Card Pin</b></label>
+      <input type="text" [(ngModel)]="model.debitCardAtmPin" #debitCardAtmPin="ngModel" 
+      placeholder="Enter Debti Card ATM Pin Name" name="debitCardAtmPin" required>
+    -->
+      
+      <label for="notes"><b>Notes</b></label>
+      <textarea id="notes" [(ngModel)]="model.notes" 
+      #notes="ngModel" name="notes" placeholder="Write something.." ></textarea>
+
+   
+   
+      <button type="submit"  id="btnsave" value="Save"> Save </button>           
+
+  </div>
+  </form>

@@ -1,0 +1,85 @@
+
+<div class="col-lg-9" > 
+<div style="height: 10%;"> <button  (click)="downloadAsPDF()" style="width:auto;"> PDF</button> &nbsp;
+ <!-- <button  (click)="addNew()" style="width:auto;">Add New</button> -->&nbsp; 
+
+  <button  (click)="openDialogForAdd()" style="width:auto;">ADD</button>
+  &nbsp;&nbsp;
+  <button  (click)="openfilter()" style="width:auto;">Filter</button> &nbsp;
+
+  <!--<button  (click)="refresh()" style="width:auto;">Refresh</button> &nbsp;
+  -->
+
+  <i  (click)="refresh()"  class="fa fa-refresh" 
+  style="padding-top:30px; font-size:30px;color:#174FA6"></i>
+
+</div>
+
+</div>
+
+         <div class="col-lg-3"></div>
+         <div class="col-lg-12" > 
+           
+          <mat-toolbar >Issues Details </mat-toolbar>
+
+          <mat-form-field appearance="none">
+            <input  matInput (keyup)="applyFilter($event.target.value)" placeholder="Search here" autocomplete="off" >
+          </mat-form-field>
+          <mat-paginator  [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        
+          <div class="mat-elevation-z8">
+            <div id="pdfTable" #pdfTable>
+
+            <table mat-table [dataSource]="dataSource" matSort>
+
+             
+              <ng-container matColumnDef="issueId2" >
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> #No </th>
+                <td mat-cell *matCellDef="let row"> {{row.issueId}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="issueNotes">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Issue </th>
+                <td mat-cell *matCellDef="let row"> {{row.issueNotes}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="createdDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Reported Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.createdDate}} </td>
+              </ng-container>
+
+            <!--  <ng-container matColumnDef="clientName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Client Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.clientName}} </td>
+              </ng-container>
+            -->
+
+              <ng-container matColumnDef="issueStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row"> {{row.issueStatus}} </td>
+              </ng-container>
+
+              
+              <ng-container matColumnDef="priority">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Priority </th>
+                <td mat-cell *matCellDef="let row"> {{row.priority}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="issueId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row"> 
+                  <button  (click)="viewData(row.issueId)"> view</button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+              </tr>
+            </table>
+          
+          </div>
+   
+        </div>  
+   </div>
+   <div style="height: 20%;"></div>
+<!-- View closed -->

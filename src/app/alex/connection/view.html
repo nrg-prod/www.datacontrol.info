@@ -1,0 +1,53 @@
+<h3>View / Modify Contacts</h3>
+<hr>
+
+<form name="form"  class="modal-content">
+
+<div class="container">
+
+
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" [(ngModel)]="model.name" #name="ngModel" name="name" required>
+
+
+      <label for="skypeId"><b>Skype ID</b></label>
+      <input type="text" [(ngModel)]="model.skypeId" #skypeId="ngModel" name="skypeId" required>
+  
+  
+      <label for="skypePassword"><b>Skype Password</b></label>
+      <input type="text" [(ngModel)]="model.skypePassword" #skypePassword="ngModel" name="skypePassword" required>
+    
+
+      <label for="phoneNumber1"><b>Phone 1</b></label>
+      <input type="text" [(ngModel)]="model.phoneNumber1" #phoneNumber1="ngModel" name="phoneNumber1" required>
+    
+      <label for="phoneNumber2"><b>Phone 2</b></label>
+      <input type="text" [(ngModel)]="model.phoneNumber2" #phoneNumber2="ngModel" name="phoneNumber2" required>
+    
+      <label for="emailId1"><b>Email 1</b></label>
+      <input type="text" [(ngModel)]="model.emailId1" #emailId1="ngModel" name="emailId1" required>
+        
+      <label for="emailId2"><b>Email 2</b></label>
+      <input type="text" [(ngModel)]="model.emailId2" #emailId2="ngModel" name="emailId2" required>
+      
+      <label for="currentAddress"><b>Current Address</b></label>
+      <textarea  [(ngModel)]="model.currentAddress" #currentAddress="ngModel" name="currentAddress" required>
+    </textarea>
+      <label for="permanentAddress"><b>Permanent Address</b></label>
+      <textarea  [(ngModel)]="model.permanentAddress" #permanentAddress="ngModel" name="permanentAddress" required>
+    </textarea>
+      <label for="country"><b>Country</b></label>
+      <select [(ngModel)]="model.country" #country="ngModel" id="country" name="country">
+        <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+     
+     
+    <div style="height: 20px;" class="row"></div>
+
+   
+      
+    <button type="submit" id="btnupdate" (click)="editRemove('PUT')" value="Save"> Update </button>
+    <button type="submit" id="btndel" (click)="editRemove('DELETE')"> Delete </button>
+    <button id="btnclose" class="mat-raised-button"(click)="close()">Cancel</button></div>
+</form>

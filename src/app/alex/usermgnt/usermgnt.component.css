@@ -1,0 +1,208 @@
+* {
+    color:white;
+  background-color: #111111;
+  /*background-color:;*/
+
+}
+
+
+
+.mat-column-issueId2 {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 8% !important;
+width: 8% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+word-break: break-word;
+
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+
+.mat-column-createdDate {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 10% !important;
+width: 10% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+word-break: break-word;
+
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+
+.mat-column-issueStatus {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 10% !important;
+width: 10% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+word-break: break-word;
+
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+.mat-column-priority {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 10% !important;
+width: 10% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+word-break: break-word;
+
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+
+
+
+
+::ng-deep .mat-form-field-placeholder{
+
+color:yellow  !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-placeholder{
+
+color:yellow  !important;
+}
+
+::ng-deep .mat-input-element {
+background-color: #243c48    !important;
+color: white !important;;
+outline: 0;
+padding: 1;
+margin: 10 ;
+width: 50% !important;
+max-width: 100%;
+text-align: center !important;
+padding-bottom: 23px !important;
+border-radius: 20px !important;
+text-underline-position: none !important;
+vertical-align: middle !important;
+
+
+}
+
+
+.mat-column-issueId {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 10% !important;
+width: 10% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+
+word-break: break-word;
+
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+
+
+.mat-column-issueNotes {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 50% !important;
+width: 50% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+word-break: break-word;
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+
+
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+ border-color: yellow;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding: 7px;
+  padding-bottom: 2px;
+  text-align: justify;
+}
+.mat-input-element {
+  font: inherit;
+  background:white;
+  color:black;
+  outline: 0;
+  padding: 1;
+  margin: 10;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+  text-align:start;
+  padding-bottom: 23px;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+mat-paginator{
+  width: 100%;
+
+}
+/* Set a style for all buttons */
+button {
+background-color:#174FA6;
+color: white;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
+border-radius: 4px;
+
+}
+
+
+:host /deep/ .mat-select-value-text {
+color: black !important;
+}
+
+:host /deep/ .mat-select-value {
+color: black !important;
+}
+
+:host /deep/ .mat-select {
+background-color: white !important;
+color:black;
+
+}
+
+:host /deep/ .mat-header-cell{
+background-color:#243C48 !important;
+border-radius: 2px;
+}
+

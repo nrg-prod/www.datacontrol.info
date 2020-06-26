@@ -1,0 +1,86 @@
+<div class="container">
+    <h1> Modify / Remove </h1>
+    <form name="form" >
+      <div class="container">
+
+     
+        <label for="clientName"><b>Clinet Name</b></label>
+        <input type="text" [(ngModel)]="model.clientName" #clientName="ngModel" name="clientName" required>
+      
+           <label for="priority"><b>Priority </b></label>      
+        <select  [(ngModel)]="model.priority" #priority="ngModel" id="priority" name="priority">
+            <option *ngFor="let list of priorityList" value="{{list.name}}">{{list.name}}</option>    
+          </select>
+         
+          <label for="issueStatus"><b>Status </b></label>      
+          <select  [(ngModel)]="model.issueStatus" #status="ngModel" id="issueStatus" name="issueStatus">
+              <option *ngFor="let list of statusList" value="{{list.name}}">{{list.name}}</option>    
+            </select>
+
+          
+          <label for="country"><b>Country </b></label>      
+          <select  [(ngModel)]="model.country" #country="ngModel" id="country" name="country">
+              <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>    
+            </select>
+
+  <label for="issueNotes"><b>Issue Desc</b></label>
+  <textarea  [(ngModel)]="model.issueNotes" #issueNotes="ngModel" name="issueNotes" required>
+
+  </textarea>
+
+  <fieldset class="form-group">
+
+    <div class="custom-file fileInputProfileWrap">
+        <div class="img-space">
+          
+        <!--  <img [src]="list.cardImageBase64" /> -->
+          <img [src]="transform()">
+        </div>
+
+    </div>
+</fieldset>
+
+
+<summary id="com1">Comments History</summary>
+<br/>
+
+
+<br/>
+<div *ngFor="let data of commentsList">
+<div  style=" border: 2px solid #00b7a8; border-radius: .5em; padding: 20px 40px;" >
+<p> Comments added by {{data.addedPerson}} | Added on {{data.date}} </p>
+
+  <label> {{data.issueComments}}</label>
+
+</div>
+<br/>
+</div>
+
+
+
+<br/> <br/><br/>
+<details id="details2">
+<summary id="com2">Add Comments</summary>
+
+
+  <div class="textarea-container">
+    <textarea [(ngModel)]="model.issueComments" #issueComments="ngModel" name="issueComments" required></textarea>
+    &nbsp;&nbsp; <button (click)="addComments()">Add</button>
+  </div>
+
+</details>
+
+<!--<p><b>Note:</b> The summary element is not supported in Edge prior version 79.</p> -->
+<br/>
+<br/>
+
+  <button type="submit"  (click)="editRemove('PUT')" value="Save"> Update </button>
+        &nbsp;&nbsp;
+  <button type="submit"  (click)="editRemove('DELETE')"> Delete </button>
+  &nbsp;&nbsp;
+<button (click)="close()">Close</button>
+</div>
+</form>
+</div>
+
+

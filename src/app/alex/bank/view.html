@@ -1,0 +1,63 @@
+<h3>View / Modify Bank</h3>
+<hr>
+<form name="form" class="modal-content">
+<div class="container">
+
+
+    <label for="bankName"><b>Bank Name</b></label>
+    <input type="text" [(ngModel)]="model.bankName" #bankName="ngModel"  name="bankName" required>
+  
+
+      <label for="accountHolderName"><b>Account holder Name</b></label>
+      <input type="text" [(ngModel)]="model.accountHolderName" #accountHolderName="ngModel" name="accountHolderName" required>
+    
+
+      <label for="accountNumber"><b>Account Number</b></label>
+      <input type="text" [(ngModel)]="model.accountNumber" #accountHolderName="ngModel" name="accountNumber" required>
+    
+
+  
+      <label for="bankAddress"><b>Bank Address</b></label>
+      <input type="text" [(ngModel)]="model.bankAddress" #bankAddress="ngModel" name="bankAddress" required>
+    
+      <label for="bankEmailid"><b>Email</b></label>
+      <input type="text" [(ngModel)]="model.bankEmailid" #bankEmailid="ngModel" name="bankEmailid" required>
+    
+      <label for="bankPhone"><b>Phone</b></label>
+      <input type="text" [(ngModel)]="model.bankPhone" #bankPhone="ngModel" name="bankPhone" required>
+    
+      <label for="debitCardAtmPin"><b>Pin ATM</b></label>
+      <input type="text" [(ngModel)]="model.debitCardAtmPin" #debitCardAtmPin="ngModel" name="debitCardAtmPin" required>
+    
+      <label for="debitCardNumber"><b>Debit Card Number</b></label>
+      <input type="text" [(ngModel)]="model.debitCardNumber" #debitCardNumber="ngModel" name="debitCardNumber" required>
+    
+      <label for="debitCardType"><b>Debit Card Type</b></label>
+      <input type="text" [(ngModel)]="model.debitCardType" #debitCardType="ngModel" name="debitCardType" required>
+        
+      <label for="netbankingUsername"><b>Net banking User Name</b></label>
+      <input type="text" [(ngModel)]="model.netbankingUsername" #netbankingUsername="ngModel" name="netbankingUsername" required>
+      
+      <label for="netbankingPassword"><b>Net Banking Password</b></label>
+      <input type="text" [(ngModel)]="model.netbankingPassword" #netbankingPassword="ngModel" name="netbankingPassword" required>
+    
+      <label for="notes"><b>Notes</b></label>  
+      <textarea  [(ngModel)]="model.notes" #notes="ngModel" name="notes"></textarea>
+
+   
+
+      <label for="bankCountry"><b>Country</b></label>
+      <select placeholder="Choose" [(ngModel)]="model.bankCountry" #bankCountry="ngModel" id="bankCountry" name="priority">
+        <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+     
+     
+    
+       <button type="submit" id="btnupdate" (click)="editRemove('PUT')" value="Save"> Update </button>
+        <button type="submit" id="btndel" (click)="editRemove('DELETE')"> Delete </button>
+        <button id="btnclose" class="mat-raised-button"(click)="close()">Cancel</button>
+
+      </div>
+
+
+  </form> 

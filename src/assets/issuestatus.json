@@ -1,0 +1,13 @@
+[
+   {  "name": "Open"},
+   {  "name": "Ready For Development"},
+   {  "name": "In Progress"},
+   {  "name": "Development Completed"},
+   {  "name": "In Review"},
+   {  "name": "Ready For Testing"},
+   {  "name": "Resolved"},
+   {  "name": "Closed"},
+   {  "name": "Cancelled"},
+   {  "name": "Rejected"}
+]
+

@@ -1,0 +1,56 @@
+
+  <h3>View / Modify Server Info</h3>
+  <hr>
+
+  <form name="form"  class="modal-content">
+    <div class="container">
+
+    <label for="bankName"><b> Name</b></label>
+    <input type="text" [(ngModel)]="model.name" #name="ngModel"  name="name" required>
+  
+
+      <label for="userName"><b>User Name</b></label>
+      <input type="text" [(ngModel)]="model.userName" #userName="ngModel" name="userName" required>
+    
+
+      <label for="password"><b>Password</b></label>
+      <input type="text" [(ngModel)]="model.password" #password="ngModel" name="password" required>
+    
+
+  
+      <label for="privateHostname"><b>Private Host Name</b></label>
+      <input type="text" [(ngModel)]="model.privateHostname" #privateHostname="ngModel" name="privateHostname" required>
+    
+      <label for="publicHostname"><b>Public Host Name</b></label>
+      <input type="text" [(ngModel)]="model.publicHostname" #publicHostname="ngModel" name="publicHostname" required>
+    
+      <label for="country"><b>Country</b></label>
+      <select [(ngModel)]="model.country" #country="ngModel" 
+      id="country" name="country">
+        <option *ngFor="let list of countryList" value="{{list.name}}">{{list.name}}</option>
+      </select>
+
+
+      <label for="notes"><b>Notes</b></label>  
+      <textarea  [(ngModel)]="model.notes" #notes="ngModel" name="notes"></textarea>
+
+   
+
+      <label for="status"><b>Status</b></label>
+      <input type="text" [(ngModel)]="model.status" #status="ngModel" name="status" required>
+    
+
+     
+
+   
+    <button type="submit"  id="btnsave" (click)="editRemove('PUT')"  value="Save"> Update </button>     
+    <button id="btnclose" id="btndel" (click)="editRemove('DELETE')"  class="mat-raised-button">Delete</button>      
+    <button id="btnclose" (click)="close()"  class="mat-raised-button">Cancel</button>
+  </div>
+
+  </form>
+<!--
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+</div> -->
