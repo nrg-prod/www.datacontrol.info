@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:8093/mynrg-server/"
-  //apiUrl: "http://35.160.115.237:8093/mynrg-server/"
+  apiUrl: "https://login.datacontrol.info/mynrg-server/"
+  
 };
 
 /*
